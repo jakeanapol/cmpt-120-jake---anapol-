@@ -1,21 +1,11 @@
 def get_int():
-    i=int(i)
-    return
+    return int
 
 def get_float():
-    '''
-    Returns a variable of type 'float'.
-    '''
-    return
+    return float
 
 def get_str():
-    '''
-    Returns a variable of type 'str'.
-    '''
-    return
+    return str
 
 def get_bool():
-    '''
-    Returns a variable of type 'bool'.
-    '''
-    return
+    return bool
