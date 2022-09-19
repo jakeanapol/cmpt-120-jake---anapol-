@@ -8,7 +8,7 @@ def subtract(a, b):
 
 def multiply(a, b):
     prod=a*b
-    return
+    return prod
 
 def divide(a, b):
     quotient=a/b
@@ -20,4 +20,4 @@ def power(a, b):
 
 def mod(a, b):
     Remainder=a%b
-    return
+    return 
