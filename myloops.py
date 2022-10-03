@@ -22,7 +22,6 @@ def calculate_pi(n):
     the following:
 
         X = 1 - 4/3 + 4/5 - 4/7 + 4/9 - 4/11 + 4/13 - ...
-
     Notice the pattern within the formula. Please note that this series is never-ending
     and the higher value you pass in for n the closer the value of X converges to the value
     of Pi.
@@ -39,15 +38,19 @@ def calculate_pi(n):
     '''
 
 
-    result = 1
+    result = 0
+
 
     # your logic
-    denom=1
+    k = 1
     for i in range(n):
-        if i % 2 ==0:
-            result = i - 4/denom
+        if i % 2 == 0:
+            result = result + 4/k 
         else:
-            result = i +4/denom 
+            result = result - 4/k 
+
+        #increment denom by 2
+        k = k + 2      
 
     return result
 
@@ -68,11 +71,21 @@ def fibonacci(n):
     i = 0
     first = 0 
     second = 1
+
+    if n <= 0:
+        return 0
+
+    elif n == 1:
+        return first
+
+    #else...        
     for i in range(0, n):
-        result = result + first
-        next_term = first + second
+        result = first = second
         first = second
-        second = next_term
+        second = result
+
+        #increment i
+        i += i
 
     # your logic
 
