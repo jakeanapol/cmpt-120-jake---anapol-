@@ -1,6 +1,7 @@
 def start():
 
     # target to guess
+    print('you have 3 tries')
     answer = 'zebra'
     guess = ''
     guessNum = 1
