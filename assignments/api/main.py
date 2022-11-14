@@ -33,3 +33,18 @@ books = [
 def get_books():
     # Returns the books list in JSON which stands for JavaScript Object Notation.
     return jsonify({"books": books})
+    
+    @app.route("/books/<int:book_id>", methods=["GET"])
+def get_book(book_id):
+    # Create a dictionary object to hold book data.
+    result = {}
+
+    # Iterate through each book in the list.
+    for book in books:
+        # If the book's id matches what the user passed in; set the result and break.
+        if book["id"] == book_id:
+            result = jsonify({"book": book})
+            break
+
+    # Returns the book in JSON form or an empty dictionary if the book could not be found. Normally would throw a 404.
+    return result
