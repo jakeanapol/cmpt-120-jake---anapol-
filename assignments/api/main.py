@@ -32,7 +32,6 @@ def get_books():
     return jsonify({"books": books})
 
 
-
 @app.route("/books/<int:book_id>", methods=["GET"])
 def get_book(book_id):
     # Create a dictionary object to hold book data.
