@@ -1,6 +1,3 @@
-from genericpath import exists
-
-
 class EmailStore:
 
     def __init__(self):
@@ -22,12 +19,37 @@ class EmailStore:
 
         @return the email that was added.
         '''
+        
         email = None
-        # TODO if either first_name or last_name is None raise an exception
-        # TODO use a while loop to construct email from first_name and last_name and check if it exists.
-        # TODO if generated email exists, increment count.
-        # TODO if generated email doesn't exist, add it to the collection of emails (self.emails).
+        count = 1
+
+        try:
+            email = first_name + '.' + last_name + str(count) + "@marist.edu"
+        except first_name == None:
+            print("Handling invalid first name")
+            first_name = 'name?'
+        except last_name == None:       
+            print("Handling invalid last name")
+            last_name = 'name?'
+
+
+
+        email = first_name + '.' + last_name + str(count) + "@marist.edu"
+        
+        ''' Why Is this false?? 
+        not sure why this is never being found in the array 
+        '''
+        print(exists(email))
+
+        while(exists(email)):
+            # If it exists, increment count
+            count += 1
+
+            # update email with the correct count    
+            email = first_name + '.' + last_name + str(count) + "@marist.edu"    
+        
         self.emails.append(email)
+    
         return email
 
     def remove(self, email):
@@ -35,4 +57,8 @@ class EmailStore:
         Method that removes an email from the store.
         '''
         # TODO if email doesn't exist, raise an exception.
-        self.emails.remove(email)
+        try:
+            self.emails.remove(email)
+        # nothing needed if doesnt exist
+        except ValueError:
+            pass    
