@@ -1,6 +1,6 @@
 from math import pi
 
-from myloops import *
+from assignments.loops.myloops import *
 
 
 class TestClass:
