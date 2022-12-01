@@ -1,11 +1,11 @@
 def get_int():
-    return int
+    return 1
 
 def get_float():
-    return float
+    return 1.1
 
 def get_str():
-    return str
+    return "hello"
 
 def get_bool():
-    return bool
+    return True
