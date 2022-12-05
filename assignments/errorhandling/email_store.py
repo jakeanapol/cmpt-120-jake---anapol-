@@ -39,9 +39,9 @@ class EmailStore:
         ''' Why Is this false?? 
         not sure why this is never being found in the array 
         '''
-        print(exists(email))
+        print(self.exists(email))
 
-        while(exists(email)):
+        while(self.exists(email)):
             # If it exists, increment count
             count += 1
 
